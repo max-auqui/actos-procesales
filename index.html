@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Expedientes Judiciales</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Contador de Expedientes Judiciales</h1>
+    <p>Sube un archivo Excel para contar actos procesales y secretarios.</p>
+    
+    <form id="uploadForm">
+      <input type="file" id="excelFile" accept=".xlsx, .xls" />
+      <button type="submit">Procesar Excel</button>
+    </form>
+    
+    <div id="error" class="error"></div>
+    
+    <div id="results" class="results">
+      <h2>Resumen de Actos Procesales</h2>
+      <table id="actSummaryTable">
+        <thead>
+          <tr>
+            <th>Acto Procesal</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <h2>Resumen por Secretario</h2>
+      <table id="secretarySummaryTable">
+        <thead>
+          <tr>
+            <th>Secretario</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Cargar SheetJS desde CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
